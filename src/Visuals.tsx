@@ -215,29 +215,43 @@ const ShapeFig = ({ shape, labels }: { shape: 'square' | 'rectangle' | 'triangle
 // ---------- P2 additions ----------
 
 // Place-value blocks: hundreds (flats), tens (rods), ones (units)
+// Base-ten blocks shown as three clearly-separated, labelled columns (百 / 十 / 個)
+// so each place value is easy to count. Empty columns still show their label.
 const PlaceValue = ({ hundreds, tens, ones }: { hundreds: number; tens: number; ones: number }) => (
-  <div className="flex items-end justify-center gap-4 flex-wrap">
-    <div className="flex gap-1">
-      {Array.from({ length: hundreds }).map((_, i) => (
-        <motion.svg key={i} viewBox="0 0 40 40" className="w-9 h-9" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: i * 0.05 }}>
-          <rect x={2} y={2} width={36} height={36} rx={3} fill="#fecaca" stroke="#ef4444" strokeWidth={1.5} />
-          {[10, 20, 30].map((p) => <line key={`v${p}`} x1={p} y1={2} x2={p} y2={38} stroke="#ef4444" strokeWidth={0.8} />)}
-          {[10, 20, 30].map((p) => <line key={`h${p}`} x1={2} y1={p} x2={38} y2={p} stroke="#ef4444" strokeWidth={0.8} />)}
-        </motion.svg>
-      ))}
+  <div className="flex items-end justify-center gap-5 sm:gap-8">
+    {/* 百 — hundred flats */}
+    <div className="flex flex-col items-center gap-1.5">
+      <div className="flex flex-wrap items-end justify-center gap-1.5 min-h-[40px] max-w-[160px]">
+        {Array.from({ length: hundreds }).map((_, i) => (
+          <motion.svg key={i} viewBox="0 0 40 40" className="w-9 h-9" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: i * 0.05 }}>
+            <rect x={2} y={2} width={36} height={36} rx={3} fill="#fecaca" stroke="#ef4444" strokeWidth={1.5} />
+            {[10, 20, 30].map((p) => <line key={`v${p}`} x1={p} y1={2} x2={p} y2={38} stroke="#ef4444" strokeWidth={0.8} />)}
+            {[10, 20, 30].map((p) => <line key={`h${p}`} x1={2} y1={p} x2={38} y2={p} stroke="#ef4444" strokeWidth={0.8} />)}
+          </motion.svg>
+        ))}
+      </div>
+      <span className="text-base font-black text-red-500">百</span>
     </div>
-    <div className="flex gap-1">
-      {Array.from({ length: tens }).map((_, i) => (
-        <motion.svg key={i} viewBox="0 0 10 40" className="w-3 h-9" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 + i * 0.04 }}>
-          <rect x={2} y={2} width={6} height={36} rx={2} fill="#bfdbfe" stroke="#3b82f6" strokeWidth={1} />
-          {[10, 16, 22, 28, 34].map((p) => <line key={p} x1={2} y1={p} x2={8} y2={p} stroke="#3b82f6" strokeWidth={0.7} />)}
-        </motion.svg>
-      ))}
+    {/* 十 — ten rods (well spaced so they can be counted) */}
+    <div className="flex flex-col items-center gap-1.5">
+      <div className="flex flex-wrap items-end justify-center gap-2 min-h-[40px] max-w-[140px]">
+        {Array.from({ length: tens }).map((_, i) => (
+          <motion.svg key={i} viewBox="0 0 14 44" className="w-3.5 h-10" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 + i * 0.04 }}>
+            <rect x={3} y={2} width={8} height={40} rx={2} fill="#bfdbfe" stroke="#3b82f6" strokeWidth={1.2} />
+            {[6, 10, 14, 18, 22, 26, 30, 34, 38].map((p) => <line key={p} x1={3} y1={p} x2={11} y2={p} stroke="#3b82f6" strokeWidth={0.7} />)}
+          </motion.svg>
+        ))}
+      </div>
+      <span className="text-base font-black text-blue-500">十</span>
     </div>
-    <div className="grid grid-cols-3 gap-0.5">
-      {Array.from({ length: ones }).map((_, i) => (
-        <motion.div key={i} className="w-2.5 h-2.5 rounded-sm bg-amber-300 border border-amber-500" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4 + i * 0.03 }} />
-      ))}
+    {/* 個 — single units */}
+    <div className="flex flex-col items-center gap-1.5">
+      <div className="flex flex-wrap items-end justify-center gap-1 min-h-[40px] max-w-[80px]">
+        {Array.from({ length: ones }).map((_, i) => (
+          <motion.div key={i} className="w-3.5 h-3.5 rounded-sm bg-amber-300 border border-amber-500" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4 + i * 0.03 }} />
+        ))}
+      </div>
+      <span className="text-base font-black text-amber-600">個</span>
     </div>
   </div>
 );

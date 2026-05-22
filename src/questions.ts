@@ -154,14 +154,15 @@ const digitOpts = (must: number): number[] => {
 // ---------- 數字 ----------
 function genNumbers(level: number): Question {
   if (level === 0) {
-    const h = rnd(1, 9), t = rnd(0, 9), o = rnd(0, 9);
+    // hundreds capped at 6 so the base-ten block picture stays easy to count
+    const h = rnd(1, 6), t = rnd(0, 9), o = rnd(0, 9);
     const n = h * 100 + t * 10 + o;
     const v = rnd(0, 2);
     if (v === 0)
       return { text: `${h} 個百 + ${t} 個十 + ${o} 個一 = ?`, answer: n, options: numOptions(n, 30), visual: { kind: 'place', hundreds: h, tens: t, ones: o } };
     if (v === 1)
       return { text: `數字 ${n} 嘅「百位」數字係幾多？`, answer: h, options: digitOpts(h) };
-    return { text: `睇圖數一數，一共有幾多？`, answer: n, options: numOptions(n, 40), visual: { kind: 'place', hundreds: h, tens: t, ones: o } };
+    return { text: `睇圖，呢個數係幾多？（🟥百・🟦十・🟨個）`, answer: n, options: numOptions(n, 40), visual: { kind: 'place', hundreds: h, tens: t, ones: o } };
   }
   if (level === 1) {
     const v = rnd(0, 2);
