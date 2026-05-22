@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Browser tab icon: Jolly the dolphin (Tadamate) -->
+    <link rel="icon" type="image/png" href="/dolphin.png" />
+    <link rel="apple-touch-icon" href="/dolphin.png" />
+    <meta name="theme-color" content="#0d9488" />
+
+    <!-- Primary SEO -->
+    <title>港數英大冒險 Math &amp; English Quest｜P2 香港數學與英文學習遊戲</title>
+    <meta
+      name="description"
+      content="一個為小二 (P2) 學生而設嘅免費香港數學與英文學習遊戲。本遊戲懷著感謝之心，採用 Tadaland 嘅 Tadamates 作為學習夥伴角色；數學 STEAM 內容由 Eureka Language Services Limited 嘅 STEAM 團隊分享，英語學習內容亦由 Eureka Language Services Limited 分享。A free Primary 2 Hong Kong maths &amp; English learning game gratefully featuring Tadaland's Tadamates as learning mascots, with learning content shared by Eureka Language Services Limited."
+    />
+    <meta
+      name="keywords"
+      content="Tadaland, Tadamates, Tadaland mascots, Tadaland characters, personality-inspired characters, STEAM education, children's education, creative learning, Eureka Language Services, STEAM learning Hong Kong, P2 maths, P2 English, English learning Hong Kong, English grammar, phonics, vocabulary, Hong Kong maths game, Hong Kong English game, 港數英大冒險"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Math &amp; English Quest (港數英大冒險)" />
+    <link rel="canonical" href="https://kaelnebula.github.io/P2-Math-Eng/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="港數英大冒險 Math &amp; English Quest" />
+    <meta property="og:title" content="港數英大冒險 Math &amp; English Quest｜P2 香港數學與英文學習遊戲" />
+    <meta
+      property="og:description"
+      content="懷著感謝之心，本遊戲採用 Tadaland 嘅 Tadamates 作為學習夥伴角色；學習內容由 Eureka Language Services Limited 分享（數學為 STEAM 內容，另設英語學習內容）。A free Primary 2 Hong Kong maths &amp; English game featuring Tadaland's Tadamates, with content shared by Eureka Language Services Limited."
+    />
+    <meta property="og:url" content="https://kaelnebula.github.io/P2-Math-Eng/" />
+    <meta property="og:image" content="https://kaelnebula.github.io/P2-Math-Eng/lion.png" />
+    <meta property="og:image:alt" content="Tadamates 學習夥伴角色 / Tadaland's Tadamates learning mascot" />
+    <meta property="og:locale" content="zh_HK" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="港數英大冒險 Math &amp; English Quest｜P2 香港數學與英文學習遊戲" />
+    <meta
+      name="twitter:description"
+      content="懷著感謝之心，本遊戲採用 Tadaland 嘅 Tadamates 作為學習夥伴角色；學習內容由 Eureka Language Services Limited 分享。"
+    />
+    <meta name="twitter:image" content="https://kaelnebula.github.io/P2-Math-Eng/lion.png" />
+
+    <!-- JSON-LD structured data: the learning game + a respectful, non-commercial acknowledgement
+         of Tadaland (mascots) and Eureka Language Services Limited (STEAM content) as DISTINCT parties. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": ["WebApplication", "LearningResource"],
+            "@id": "https://kaelnebula.github.io/P2-Math-Eng/#app",
+            "name": "港數英大冒險 Math & English Quest",
+            "url": "https://kaelnebula.github.io/P2-Math-Eng/",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web",
+            "inLanguage": ["zh-HK", "en"],
+            "educationalLevel": "Primary 2 (P2)",
+            "learningResourceType": "Educational game",
+            "isAccessibleForFree": true,
+            "audience": { "@type": "EducationalAudience", "educationalRole": "student" },
+            "teaches": ["mathematics", "English language", "grammar", "vocabulary", "phonics"],
+            "about": ["STEAM education", "children's education", "creative learning", "mathematics", "English learning"],
+            "description": "A free Primary 2 Hong Kong maths & English learning game with animated visuals.",
+            "creditText": "This project gratefully features Tadaland's Tadamates as learning mascots, with learning content shared by Eureka Language Services Limited (STEAM for maths, plus English learning content).",
+            "isBasedOn": { "@id": "https://kaelnebula.github.io/P2-Math-Eng/#tadaland" },
+            "contributor": { "@id": "https://kaelnebula.github.io/P2-Math-Eng/#eureka" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://kaelnebula.github.io/P2-Math-Eng/#tadaland",
+            "name": "Tadaland",
+            "url": "https://tadaland.net",
+            "description": "Creator of the Tadamates — original character mascots that support personality-inspired, creative and meaningful learning.",
+            "sameAs": ["https://tadaland.net", "https://www.instagram.com/tadaland_hk/"]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://kaelnebula.github.io/P2-Math-Eng/#eureka",
+            "name": "Eureka Language Services Limited",
+            "url": "https://www.eurekahk.net",
+            "description": "Shares children's learning content — STEAM (via its STEAM team) and English language learning.",
+            "sameAs": ["https://www.eurekahk.net"]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
