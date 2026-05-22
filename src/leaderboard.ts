@@ -7,11 +7,10 @@
  * Pages with no CORS configuration. All calls fail gracefully.
  */
 
-// TODO(P2): deploy a NEW Google Sheet + Apps Script Web App for the P2 site and
-// paste its /exec URL here. It MUST be separate from the P3 backend, otherwise
-// P2 scores pollute the P3 leaderboard. Until configured, the leaderboard is
-// disabled and fails gracefully (play is never blocked).
-const ENDPOINT = 'REPLACE_WITH_P2_APPS_SCRIPT_URL';
+// P2 Apps Script Web App (writes to the "P2" tab of the shared sheet; separate
+// from the P3 deployment so the two leaderboards never mix).
+const ENDPOINT =
+  'https://script.google.com/macros/s/AKfycbyRyse4q_oHZisPznF3NO6Tv4o_joi_uhmblxex-atd5pkuu5LHK4HiegN9VgSS-4mTEA/exec';
 const ENDPOINT_READY = ENDPOINT.startsWith('https://');
 
 // P2-specific cache key — github.io localStorage is shared across the whole
