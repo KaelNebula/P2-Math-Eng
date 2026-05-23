@@ -140,8 +140,8 @@ const POOL: Record<string, Item[][]> = {
     [
       { q: "Your mother's mother is your ___.", a: 'grandmother', opts: ['grandmother', 'sister', 'aunt', 'cousin'] },
       { q: "Your father's brother is your ___.", a: 'uncle', opts: ['uncle', 'nephew', 'grandfather', 'niece'] },
-      { q: "Your sister's daughter is your father's ___? No — your parents' children are your ___.", a: 'siblings', opts: ['siblings', 'parents', 'teachers', 'friends'] },
-      { q: 'A baby boy in your family is your ___ (if he is younger).', a: 'brother', opts: ['brother', 'mother', 'father', 'uncle'] },
+      { q: 'Your brother and sister are your ___.', a: 'siblings', opts: ['siblings', 'parents', 'teachers', 'friends'] },
+      { q: "Your mother's sister is your ___.", a: 'aunt', opts: ['aunt', 'uncle', 'cousin', 'grandfather'] },
       { q: "Your aunt's husband is your ___.", a: 'uncle', opts: ['uncle', 'cousin', 'brother', 'grandfather'] },
       { q: 'Your mum and dad are your ___.', a: 'parents', opts: ['parents', 'friends', 'pets', 'neighbours'] },
     ],
